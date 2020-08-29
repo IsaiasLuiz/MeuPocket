@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MeuPocket</string>
+    <string name="title">Título</string>
+    <string name="url">Endereço</string>
+    <string name="text_button_save">Salvar</string>
+    <string name="empty_fields">Preencha todos os campos!</string>
+</resources>

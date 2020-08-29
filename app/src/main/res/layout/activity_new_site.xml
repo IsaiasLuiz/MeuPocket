@@ -40,11 +40,19 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_margin="@dimen/margin_default"
         android:inputType="textUri"/>
+    <CheckBox
+        android:id="@+id/checkbox_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/url_edit_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="@dimen/margin_default"
+        android:text="Favoritar"/>
     <Button
         android:id="@+id/save_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/url_edit_text"
+        app:layout_constraintTop_toBottomOf="@id/checkbox_favorite"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_margin="@dimen/margin_default"
         android:text="@string/text_button_save"

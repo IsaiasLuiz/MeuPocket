@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ public class NewSiteActivity extends AppCompatActivity implements View.OnClickLi
 
     private EditText titleEditText;
     private EditText urlEditText;
+    private CheckBox favoriteCheckBox;
     private Button saveButton;
 
     @Override
@@ -25,6 +27,7 @@ public class NewSiteActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_new_site);
         titleEditText = findViewById(R.id.title_edit_text);
         urlEditText = findViewById(R.id.url_edit_text);
+        favoriteCheckBox = findViewById(R.id.checkbox_favorite);
         saveButton = findViewById(R.id.save_button);
         saveButton.setOnClickListener(this);
     }
@@ -39,6 +42,9 @@ public class NewSiteActivity extends AppCompatActivity implements View.OnClickLi
                 return;
             }
             Site site = new Site(title, UrlUtils.corrigeEndereco(url));
+            if(favoriteCheckBox.isChecked()) {
+                site.doFavotite();
+            }
             SiteDao.insert(getApplicationContext(), site);
             finish();
         }
